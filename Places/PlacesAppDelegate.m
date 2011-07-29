@@ -7,8 +7,8 @@
 //
 
 #import "PlacesAppDelegate.h"
-
-#import "PlacesViewController.h"
+#import "TopPlacesViewController.h"
+#import "RecentPhotosViewController.h"
 
 @implementation PlacesAppDelegate
 
@@ -18,12 +18,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[PlacesViewController alloc] initWithNibName:@"PlacesViewController_iPhone" bundle:nil]; 
-    } else {
-        self.viewController = [[PlacesViewController alloc] initWithNibName:@"PlacesViewController_iPad" bundle:nil]; 
-    }
+    
+    TopPlacesViewController *topPlaces = [[TopPlacesViewController alloc] initWithStyle: UITableViewStylePlain ];
+    RecentPhotosViewController *recentPhotos = [[RecentPhotosViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    self.viewController = [[UITabBarController alloc] init];
+    
+    self.viewController.viewControllers = [NSArray arrayWithObjects: topPlaces, recentPhotos, nil];
+    
+    [topPlaces release]; [recentPhotos release];
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

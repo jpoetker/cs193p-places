@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) PlacesViewController *viewController;
+@property (strong, nonatomic) UITabBarController *viewController;
 
 @end
