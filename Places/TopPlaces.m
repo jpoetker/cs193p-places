@@ -26,7 +26,12 @@
 - (NSArray *)places
 {
     if (!places) {
-        places = [[FlickrFetcher topPlaces] retain];
+        NSArray *fetchedPlaces = [FlickrFetcher topPlaces];
+        // sort the results by title
+        places = [fetchedPlaces sortedArrayUsingDescriptors: 
+                  [NSArray arrayWithObjects:
+                   [NSSortDescriptor sortDescriptorWithKey:@"_content" ascending:YES],nil]];
+        [places retain];
     }
     return places;
 }
