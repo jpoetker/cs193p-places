@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E29454713E236AA00D5BF4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454613E236AA00D5BF4D /* UIKit.framework */; };
+		7E29454913E236AA00D5BF4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454813E236AA00D5BF4D /* Foundation.framework */; };
+		7E29454B13E236AA00D5BF4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454A13E236AA00D5BF4D /* CoreGraphics.framework */; };
+		7E29455113E236AA00D5BF4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E29454F13E236AA00D5BF4D /* InfoPlist.strings */; };
+		7E29455313E236AA00D5BF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E29455213E236AA00D5BF4D /* main.m */; };
+		7E29455713E236AA00D5BF4D /* PlacesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E29455613E236AA00D5BF4D /* PlacesAppDelegate.m */; };
+		7E29455A13E236AA00D5BF4D /* PlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E29455913E236AA00D5BF4D /* PlacesViewController.m */; };
+		7E29455D13E236AA00D5BF4D /* PlacesViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E29455B13E236AA00D5BF4D /* PlacesViewController_iPhone.xib */; };
+		7E29456013E236AA00D5BF4D /* PlacesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E29455E13E236AA00D5BF4D /* PlacesViewController_iPad.xib */; };
+		7E29456813E236AB00D5BF4D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29456713E236AB00D5BF4D /* SenTestingKit.framework */; };
+		7E29456913E236AB00D5BF4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454613E236AA00D5BF4D /* UIKit.framework */; };
+		7E29456A13E236AB00D5BF4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454813E236AA00D5BF4D /* Foundation.framework */; };
+		7E29456B13E236AB00D5BF4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454A13E236AA00D5BF4D /* CoreGraphics.framework */; };
+		7E29457313E236AB00D5BF4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E29457113E236AB00D5BF4D /* InfoPlist.strings */; };
+		7E29457613E236AB00D5BF4D /* PlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E29457513E236AB00D5BF4D /* PlacesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E29456C13E236AB00D5BF4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E29453913E236AA00D5BF4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E29454113E236AA00D5BF4D;
+			remoteInfo = Places;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7E29454213E236AA00D5BF4D /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E29454613E236AA00D5BF4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7E29454813E236AA00D5BF4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7E29454A13E236AA00D5BF4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7E29454E13E236AA00D5BF4D /* Places-Info.plist */ = {isa = PBXFileReference; path = "Places-Info.plist"; sourceTree = "<group>"; };
+		7E29455013E236AA00D5BF4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7E29455213E236AA00D5BF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E29455413E236AA00D5BF4D /* Places-Prefix.pch */ = {isa = PBXFileReference; path = "Places-Prefix.pch"; sourceTree = "<group>"; };
+		7E29455513E236AA00D5BF4D /* PlacesAppDelegate.h */ = {isa = PBXFileReference; path = PlacesAppDelegate.h; sourceTree = "<group>"; };
+		7E29455613E236AA00D5BF4D /* PlacesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlacesAppDelegate.m; sourceTree = "<group>"; };
+		7E29455813E236AA00D5BF4D /* PlacesViewController.h */ = {isa = PBXFileReference; path = PlacesViewController.h; sourceTree = "<group>"; };
+		7E29455913E236AA00D5BF4D /* PlacesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlacesViewController.m; sourceTree = "<group>"; };
+		7E29455C13E236AA00D5BF4D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PlacesViewController_iPhone.xib; sourceTree = "<group>"; };
+		7E29455F13E236AA00D5BF4D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PlacesViewController_iPad.xib; sourceTree = "<group>"; };
+		7E29456613E236AB00D5BF4D /* PlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E29456713E236AB00D5BF4D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7E29457013E236AB00D5BF4D /* PlacesTests-Info.plist */ = {isa = PBXFileReference; path = "PlacesTests-Info.plist"; sourceTree = "<group>"; };
+		7E29457213E236AB00D5BF4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7E29457413E236AB00D5BF4D /* PlacesTests.h */ = {isa = PBXFileReference; path = PlacesTests.h; sourceTree = "<group>"; };
+		7E29457513E236AB00D5BF4D /* PlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlacesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E29453F13E236AA00D5BF4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E29454713E236AA00D5BF4D /* UIKit.framework in Frameworks */,
+				7E29454913E236AA00D5BF4D /* Foundation.framework in Frameworks */,
+				7E29454B13E236AA00D5BF4D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E29456213E236AB00D5BF4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E29456813E236AB00D5BF4D /* SenTestingKit.framework in Frameworks */,
+				7E29456913E236AB00D5BF4D /* UIKit.framework in Frameworks */,
+				7E29456A13E236AB00D5BF4D /* Foundation.framework in Frameworks */,
+				7E29456B13E236AB00D5BF4D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E29453713E236AA00D5BF4D = {
+			isa = PBXGroup;
+			children = (
+				7E29454C13E236AA00D5BF4D /* Places */,
+				7E29456E13E236AB00D5BF4D /* PlacesTests */,
+				7E29454513E236AA00D5BF4D /* Frameworks */,
+				7E29454313E236AA00D5BF4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E29454313E236AA00D5BF4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E29454213E236AA00D5BF4D /* Places.app */,
+				7E29456613E236AB00D5BF4D /* PlacesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E29454513E236AA00D5BF4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E29454613E236AA00D5BF4D /* UIKit.framework */,
+				7E29454813E236AA00D5BF4D /* Foundation.framework */,
+				7E29454A13E236AA00D5BF4D /* CoreGraphics.framework */,
+				7E29456713E236AB00D5BF4D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E29454C13E236AA00D5BF4D /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				7E29455513E236AA00D5BF4D /* PlacesAppDelegate.h */,
+				7E29455613E236AA00D5BF4D /* PlacesAppDelegate.m */,
+				7E29455813E236AA00D5BF4D /* PlacesViewController.h */,
+				7E29455913E236AA00D5BF4D /* PlacesViewController.m */,
+				7E29455B13E236AA00D5BF4D /* PlacesViewController_iPhone.xib */,
+				7E29455E13E236AA00D5BF4D /* PlacesViewController_iPad.xib */,
+				7E29454D13E236AA00D5BF4D /* Supporting Files */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		7E29454D13E236AA00D5BF4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E29454E13E236AA00D5BF4D /* Places-Info.plist */,
+				7E29454F13E236AA00D5BF4D /* InfoPlist.strings */,
+				7E29455213E236AA00D5BF4D /* main.m */,
+				7E29455413E236AA00D5BF4D /* Places-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E29456E13E236AB00D5BF4D /* PlacesTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E29457413E236AB00D5BF4D /* PlacesTests.h */,
+				7E29457513E236AB00D5BF4D /* PlacesTests.m */,
+				7E29456F13E236AB00D5BF4D /* Supporting Files */,
+			);
+			path = PlacesTests;
+			sourceTree = "<group>";
+		};
+		7E29456F13E236AB00D5BF4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E29457013E236AB00D5BF4D /* PlacesTests-Info.plist */,
+				7E29457113E236AB00D5BF4D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E29454113E236AA00D5BF4D /* Places */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E29457913E236AB00D5BF4D /* Build configuration list for PBXNativeTarget "Places" */;
+			buildPhases = (
+				7E29453E13E236AA00D5BF4D /* Sources */,
+				7E29453F13E236AA00D5BF4D /* Frameworks */,
+				7E29454013E236AA00D5BF4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Places;
+			productName = Places;
+			productReference = 7E29454213E236AA00D5BF4D /* Places.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E29456513E236AB00D5BF4D /* PlacesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E29457C13E236AB00D5BF4D /* Build configuration list for PBXNativeTarget "PlacesTests" */;
+			buildPhases = (
+				7E29456113E236AB00D5BF4D /* Sources */,
+				7E29456213E236AB00D5BF4D /* Frameworks */,
+				7E29456313E236AB00D5BF4D /* Resources */,
+				7E29456413E236AB00D5BF4D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E29456D13E236AB00D5BF4D /* PBXTargetDependency */,
+			);
+			name = PlacesTests;
+			productName = PlacesTests;
+			productReference = 7E29456613E236AB00D5BF4D /* PlacesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E29453913E236AA00D5BF4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Medplus, Inc";
+			};
+			buildConfigurationList = 7E29453C13E236AA00D5BF4D /* Build configuration list for PBXProject "Places" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7E29453713E236AA00D5BF4D;
+			productRefGroup = 7E29454313E236AA00D5BF4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E29454113E236AA00D5BF4D /* Places */,
+				7E29456513E236AB00D5BF4D /* PlacesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E29454013E236AA00D5BF4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E29455113E236AA00D5BF4D /* InfoPlist.strings in Resources */,
+				7E29455D13E236AA00D5BF4D /* PlacesViewController_iPhone.xib in Resources */,
+				7E29456013E236AA00D5BF4D /* PlacesViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E29456313E236AB00D5BF4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E29457313E236AB00D5BF4D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E29456413E236AB00D5BF4D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E29453E13E236AA00D5BF4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E29455313E236AA00D5BF4D /* main.m in Sources */,
+				7E29455713E236AA00D5BF4D /* PlacesAppDelegate.m in Sources */,
+				7E29455A13E236AA00D5BF4D /* PlacesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E29456113E236AB00D5BF4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E29457613E236AB00D5BF4D /* PlacesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E29456D13E236AB00D5BF4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E29454113E236AA00D5BF4D /* Places */;
+			targetProxy = 7E29456C13E236AB00D5BF4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E29454F13E236AA00D5BF4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E29455013E236AA00D5BF4D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7E29455B13E236AA00D5BF4D /* PlacesViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E29455C13E236AA00D5BF4D /* en */,
+			);
+			name = PlacesViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		7E29455E13E236AA00D5BF4D /* PlacesViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E29455F13E236AA00D5BF4D /* en */,
+			);
+			name = PlacesViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		7E29457113E236AB00D5BF4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E29457213E236AB00D5BF4D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E29457713E236AB00D5BF4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E29457813E236AB00D5BF4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E29457A13E236AB00D5BF4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Places/Places-Prefix.pch";
+				INFOPLIST_FILE = "Places/Places-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7E29457B13E236AB00D5BF4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Places/Places-Prefix.pch";
+				INFOPLIST_FILE = "Places/Places-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7E29457D13E236AB00D5BF4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Places.app/Places";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Places/Places-Prefix.pch";
+				INFOPLIST_FILE = "PlacesTests/PlacesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7E29457E13E236AB00D5BF4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Places.app/Places";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Places/Places-Prefix.pch";
+				INFOPLIST_FILE = "PlacesTests/PlacesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E29453C13E236AA00D5BF4D /* Build configuration list for PBXProject "Places" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E29457713E236AB00D5BF4D /* Debug */,
+				7E29457813E236AB00D5BF4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E29457913E236AB00D5BF4D /* Build configuration list for PBXNativeTarget "Places" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E29457A13E236AB00D5BF4D /* Debug */,
+				7E29457B13E236AB00D5BF4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7E29457C13E236AB00D5BF4D /* Build configuration list for PBXNativeTarget "PlacesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E29457D13E236AB00D5BF4D /* Debug */,
+				7E29457E13E236AB00D5BF4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E29453913E236AA00D5BF4D /* Project object */;
+}
