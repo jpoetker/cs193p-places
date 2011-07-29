@@ -52,20 +52,22 @@
     return [[[PlacePhotos alloc] initWithPlace: [self placeAtIndex: index]] autorelease];
 }
 
++ (NSDictionary *) place: (id) place
+{
+    if ([place isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary *) place;
+    } 
+    return nil;
+}
+
 + (NSArray *)descriptionComponentsFromPlace: (id)place
 {
-    if ([place isKindOfClass: [NSDictionary class]]) {
-        return [[(NSDictionary *) place valueForKey:@"_content"]  componentsSeparatedByString: @","];
-    }
-    return nil;
+    return [[[TopPlaces place: place] valueForKey:@"_content"] componentsSeparatedByString:@","];
 }
 
 + (NSString *)placeIdFromPlace: (id)place
 {
-    if ([place isKindOfClass:[NSDictionary class]]) {
-        return [(NSDictionary *) place valueForKey: @"place_id"];
-    }
-    return nil;
+    return [[TopPlaces place: place] valueForKey:@"place_id"];
 }
 
 + (NSString *)cityFromPlace: (id)place 
