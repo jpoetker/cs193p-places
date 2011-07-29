@@ -19,6 +19,7 @@
     self.tabBarItem = tabItem;
     [tabItem release];
 }
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

@@ -18,15 +18,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    UINavigationController *placesNavController = [[UINavigationController alloc] init];
     TopPlacesViewController *topPlaces = [[TopPlacesViewController alloc] initWithStyle: UITableViewStylePlain ];
+    [placesNavController pushViewController: topPlaces animated:NO];
+    [topPlaces release];
+    
+    UINavigationController *recentNavController = [[UINavigationController alloc] init];
     RecentPhotosViewController *recentPhotos = [[RecentPhotosViewController alloc] initWithStyle:UITableViewStylePlain];
+    [recentNavController pushViewController: recentPhotos animated:NO];
+    [recentPhotos release];
     
     self.viewController = [[UITabBarController alloc] init];
     
-    self.viewController.viewControllers = [NSArray arrayWithObjects: topPlaces, recentPhotos, nil];
-    
-    [topPlaces release]; [recentPhotos release];
+    self.viewController.viewControllers = [NSArray arrayWithObjects: placesNavController, recentNavController, nil];
+    [placesNavController release]; [recentNavController release];
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

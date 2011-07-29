@@ -1,45 +1,33 @@
 //
-//  TopPlacesViewController.m
+//  PhotosTableViewController.m
 //  Places
 //
-//  Created by Jeff Poetker on 7/28/11.
+//  Created by Jeff Poetker on 7/29/11.
 //  Copyright 2011 Medplus, Inc. All rights reserved.
 //
 
-#import "TopPlacesViewController.h"
 #import "PhotosTableViewController.h"
-#import "Photos.h"
 
-@implementation TopPlacesViewController
 
-@synthesize topPlaces;
+@implementation PhotosTableViewController
 
-- (void) setup
+@synthesize photos;
+
+- (id)init
 {
-    UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTabBarSystemItem: UITabBarSystemItemFavorites tag:0];
-    tabItem.title = @"Top Places";
-    
-    self.tabBarItem = tabItem;
-    self.title = @"Top Places";
-    
-    [tabItem release];
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
+    self = [super initWithStyle: UITableViewStylePlain];
     if (self) {
-        [self setup];
+        self.photos = nil;
     }
     return self;
 }
-
-- (TopPlaces *)topPlaces
+- (id)initWithPhotos: (Photos *)somePhotos
 {
-    if (!topPlaces) {
-        topPlaces = [[TopPlaces alloc] init];
+    self = [self init];
+    if (self) {
+        self.photos = somePhotos;
     }
-    return topPlaces;
+    return self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,33 +86,41 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.topPlaces.places count];
+    return [photos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Place";
+    static NSString *CellIdentifier = @"Photo";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
-    id place = [topPlaces placeAtIndex: indexPath.row];
-
-    cell.textLabel.text = [TopPlaces cityFromPlace: place];
-    cell.detailTextLabel.text = [TopPlaces cityLocationFromPlace:place];
+    id photo = [photos photoAtIndex: indexPath.row];
+    NSString *title = [Photos titleForPhoto:photo];
+    NSString *description = [Photos descriptionForPhoto:photo];
+    
+    if ((title) && ([title length] > 0)) {
+        cell.textLabel.text = title;
+        if ((description) && ([description length] > 0)) {
+            cell.detailTextLabel.text = description;
+        } else {
+            cell.detailTextLabel.text = nil;
+        }
+    } else if ((description) && ([description length] > 0)) {
+        cell.textLabel.text = description;
+        cell.detailTextLabel.text = nil;
+    } else {
+        cell.textLabel.text = @"Unknown";
+        cell.detailTextLabel.text = nil;
+    }
+    cell.imageView.image = [Photos squareThumbnailForPhoto:photo];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
 }
 
@@ -172,18 +168,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    
-    PhotosTableViewController *photosController = [[PhotosTableViewController alloc] 
-                                                   initWithPhotos:[topPlaces photosForPlaceAtIndex: indexPath.row]];
-    photosController.title = [TopPlaces cityFromPlace:[topPlaces placeAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:photosController animated:YES];
-    [photosController release];    
-}
-
--(void) dealloc
-{
-    [topPlaces release];
-    [super dealloc];
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
 }
 
 @end

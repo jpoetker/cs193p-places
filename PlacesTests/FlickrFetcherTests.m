@@ -20,4 +20,10 @@
 
 }
 
+- (void)testFetchPhotosAtPlace
+{
+    NSArray *photos = [FlickrFetcher photosAtPlace: @"hP_s5s9VVr5Qcg"];
+    NSLog(@"%@", photos);
+}
+
 @end

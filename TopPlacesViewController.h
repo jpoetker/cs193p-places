@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopPlaces.h"
+#import "PhotosTableViewController.h"
 
 @interface TopPlacesViewController : UITableViewController
+{
+    @private
+    TopPlaces *topPlaces;
+}
 
+@property (retain, nonatomic) TopPlaces *topPlaces;
 @end

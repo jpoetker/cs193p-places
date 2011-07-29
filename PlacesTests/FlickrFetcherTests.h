@@ -14,5 +14,5 @@
 @interface FlickrFetcherTests : SenTestCase
 
 - (void)testFetchTopPlaces;    // simple standalone test
-
+- (void)testFetchPhotosAtPlace;
 @end
