@@ -21,6 +21,7 @@
 + (NSString *) titleForPhoto: (id) photo;
 + (NSString *) descriptionForPhoto: (id) photo;
 + (UIImage *) squareThumbnailForPhoto: (id) photo;
++ (UIImage *)largeImageForPhoto: (id)photo;
 @end
 
 

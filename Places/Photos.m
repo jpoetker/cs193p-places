@@ -65,6 +65,11 @@
 {
     return [[[UIImage alloc] initWithData:[FlickrFetcher imageDataForPhotoWithFlickrInfo:[Photos photo: photo] format:FlickrFetcherPhotoFormatSquare]] autorelease];
 }
++ (UIImage *)largeImageForPhoto: (id)photo
+{
+    return [[[UIImage alloc] initWithData: [FlickrFetcher imageDataForPhotoWithFlickrInfo:[Photos photo: photo] format:FlickrFetcherPhotoFormatLarge]] autorelease];
+}
+
 @end
 
 

@@ -7,7 +7,7 @@
 //
 
 #import "PhotosTableViewController.h"
-
+#import "PhotoViewController.h"
 
 @implementation PhotosTableViewController
 
@@ -167,14 +167,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+
+    PhotoViewController *photoController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
+    photoController.photo = [photos photoAtIndex:indexPath.row];
+    photoController.title = [tableView cellForRowAtIndexPath: indexPath].textLabel.text;
+    
+    [self.navigationController pushViewController:photoController animated:YES];
+    [photoController release];
+    
 }
 
 @end

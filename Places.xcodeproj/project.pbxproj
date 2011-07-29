@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E19EE7713E2FDFC00C24C2F /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E19EE7613E2FDFC00C24C2F /* PhotoViewController.m */; };
 		7E29454713E236AA00D5BF4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454613E236AA00D5BF4D /* UIKit.framework */; };
 		7E29454913E236AA00D5BF4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454813E236AA00D5BF4D /* Foundation.framework */; };
 		7E29454B13E236AA00D5BF4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E29454A13E236AA00D5BF4D /* CoreGraphics.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E19EE7513E2FDFC00C24C2F /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		7E19EE7613E2FDFC00C24C2F /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		7E29454213E236AA00D5BF4D /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E29454613E236AA00D5BF4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E29454813E236AA00D5BF4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +160,8 @@
 				7E2945A513E2D85700D5BF4D /* Photos.m */,
 				7E2945A713E2DEE800D5BF4D /* PhotosTableViewController.h */,
 				7E2945A813E2DEE900D5BF4D /* PhotosTableViewController.m */,
+				7E19EE7513E2FDFC00C24C2F /* PhotoViewController.h */,
+				7E19EE7613E2FDFC00C24C2F /* PhotoViewController.m */,
 				7E29459B13E2463700D5BF4D /* TopPlacesViewController.h */,
 				7E29459C13E2463700D5BF4D /* TopPlacesViewController.m */,
 				7E29459E13E24D2000D5BF4D /* RecentPhotosViewController.h */,
@@ -350,6 +355,7 @@
 				7E2945A313E2518100D5BF4D /* TopPlaces.m in Sources */,
 				7E2945A613E2D85700D5BF4D /* Photos.m in Sources */,
 				7E2945A913E2DEE900D5BF4D /* PhotosTableViewController.m in Sources */,
+				7E19EE7713E2FDFC00C24C2F /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +524,7 @@
 				7E29457B13E236AB00D5BF4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E29457C13E236AB00D5BF4D /* Build configuration list for PBXNativeTarget "PlacesTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +533,7 @@
 				7E29457E13E236AB00D5BF4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
