@@ -167,9 +167,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    id photo = [photos photoAtIndex: indexPath.row];
+    [photos savePhotoAsViewed:photo];
+    
     PhotoViewController *photoController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
-    photoController.photo = [photos photoAtIndex:indexPath.row];
+    photoController.photo = photo;
     photoController.title = [tableView cellForRowAtIndexPath: indexPath].textLabel.text;
     
     [self.navigationController pushViewController:photoController animated:YES];

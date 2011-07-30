@@ -26,7 +26,9 @@
 - (NSArray *)places
 {
     if (!places) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         NSArray *fetchedPlaces = [FlickrFetcher topPlaces];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         // sort the results by title
         places = [fetchedPlaces sortedArrayUsingDescriptors: 
                   [NSArray arrayWithObjects:
@@ -76,6 +78,7 @@
 //    NSLog(@"%@", [desc objectAtIndex:0]);
     return [desc objectAtIndex: 0];
 }
+
 + (NSString *)cityLocationFromPlace:(id)place
 {
     NSArray *desc = [TopPlaces descriptionComponentsFromPlace:place];

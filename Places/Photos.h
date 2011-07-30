@@ -11,12 +11,15 @@
 @interface Photos : NSObject
 {
     NSArray *photos;
+    NSMutableArray *viewed;
 }
 
 @property (nonatomic, retain) NSArray *photos;
+@property (readonly) NSArray *recentlyViewedPhotos;
 
 - (NSUInteger) count;
 - (id) photoAtIndex: (NSUInteger) index;
+- (void) savePhotoAsViewed: (id) photo;
 
 + (NSString *) titleForPhoto: (id) photo;
 + (NSString *) descriptionForPhoto: (id) photo;

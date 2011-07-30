@@ -9,6 +9,8 @@
 #import "PhotoViewController.h"
 #import "Photos.h"
 
+
+
 @implementation PhotoViewController
 
 @synthesize scrollView, imageView;
@@ -51,11 +53,14 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    self.scrollView = [[UIScrollView alloc] initWithFrame: [[UIScreen mainScreen] applicationFrame]];
-    self.scrollView.minimumZoomScale = 0.3;
-    self.scrollView.maximumZoomScale = 3.0;
-    self.scrollView.delegate = self;
-    self.view = self.scrollView;
+    UIScrollView *sv = [[UIScrollView alloc] initWithFrame: [[UIScreen mainScreen] applicationFrame]];
+    sv.minimumZoomScale = 0.3;
+    sv.maximumZoomScale = 3.0;
+    sv.delegate = self;
+    
+    self.scrollView = sv;
+    self.view = sv;
+    [sv release];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)sender

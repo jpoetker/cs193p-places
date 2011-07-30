@@ -22,4 +22,5 @@
 + (NSString *)cityFromPlace: (id)place;
 + (NSString *)cityLocationFromPlace: (id)place;
 + (NSString *) placeIdFromPlace: (id) place;
+
 @end

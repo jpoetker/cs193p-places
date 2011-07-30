@@ -18,4 +18,7 @@
 @property (retain) UIScrollView *scrollView;
 @property (retain) UIImageView *imageView;
 @property (retain, nonatomic) id photo;
+
+
+
 @end
