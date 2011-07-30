@@ -12,9 +12,15 @@
 @interface PhotosTableViewController : UITableViewController
 {
     Photos *photos;
+    BOOL savePhotoWhenSelected;
 }
 - (id)initWithPhotos: (Photos *)somePhotos;
 
-@property (atomic, retain) Photos *photos;
+@property (nonatomic, retain) Photos *photos;
+@property BOOL savePhotoWhenSelected;
+
+@end
+
+@interface RecentPhotosViewController : PhotosTableViewController
 
 @end

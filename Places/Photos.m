@@ -11,13 +11,12 @@
 #import "FlickrFetcher.h"
 
 @interface Photos() 
-@property (nonatomic, retain) NSMutableArray *viewed;
 + (NSDictionary *) castToDictionaryOrNil: (id) photo;
++ (NSMutableArray *) loadRecentlyViewedPhotos;
 @end
 
 @implementation Photos
 
-@synthesize viewed;
 @synthesize photos;
 
 - (id)init
@@ -49,43 +48,45 @@
     return [[[photos objectAtIndex:index] copy] autorelease];
 }
 
-
-- (NSMutableArray *) viewed {
-    if (!viewed) {
-        NSArray *loaded = [[NSUserDefaults standardUserDefaults] valueForKey: @"recentlyViewedPhotos"];
-        if (loaded) {
-            viewed = [loaded mutableCopy];
-            [loaded release];
-        } else {
-            viewed = [[NSMutableArray alloc] init];
-        }
-    }
-    return viewed;
+- (void) dealloc
+{
+    [photos release];
+    [super dealloc];
 }
 
-- (NSArray *) recentlyViewedPhotos {
-    return [[self.viewed copy] autorelease];
++ (NSArray *) loadRecentlyViewedPhotos
+{
+    NSArray *loaded = [[NSUserDefaults standardUserDefaults] valueForKey: @"recentlyViewedPhotos"];
+    return loaded;
 }
 
-- (void) savePhotoAsViewed: (id) photo
++ (void) savePhotoAsViewed: (id) photo
 {
     NSDictionary *dict = [Photos castToDictionaryOrNil: photo];
     
     if (dict) {
+        NSMutableArray *viewed = [[Photos loadRecentlyViewedPhotos] mutableCopy];
+        if (!viewed) {
+            viewed = [[NSMutableArray alloc] initWithCapacity:1];
+        }
         // if the photo is alread in the set, remove it to move it the top
-        [self.viewed removeObject: dict];
-        [self.viewed insertObject:dict atIndex:0];
+        [viewed removeObject: dict];
+        [viewed insertObject:dict atIndex:0];
         
-        [[NSUserDefaults standardUserDefaults] setValue:self.viewed forKey:@"recentlyViewedPhotos"];
+        for (NSUInteger i = [viewed count] - 1; i > 50; i--) {
+            [viewed removeObjectAtIndex: i];
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setValue: viewed forKey:@"recentlyViewedPhotos"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        [viewed release];
     }
 }
 
-- (void) dealloc
++ (Photos *) photosRecentlyViewed
 {
-    [photos release];
-    [viewed release];
-    [super dealloc];
+    Photos *photos = [[Photos alloc] initWithPhotos: [Photos loadRecentlyViewedPhotos]];
+    return [photos autorelease];
 }
 
 + (NSDictionary *) castToDictionaryOrNil: (id) photo

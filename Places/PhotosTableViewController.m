@@ -12,18 +12,21 @@
 @implementation PhotosTableViewController
 
 @synthesize photos;
+@synthesize savePhotoWhenSelected;
 
-- (id)init
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle: UITableViewStylePlain];
+    self = [super initWithStyle:style];
     if (self) {
         self.photos = nil;
+        self.savePhotoWhenSelected = YES;
     }
     return self;
 }
+
 - (id)initWithPhotos: (Photos *)somePhotos
 {
-    self = [self init];
+    self = [self initWithStyle:UITableViewStylePlain];
     if (self) {
         self.photos = somePhotos;
     }
@@ -36,6 +39,13 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+-(void)setPhotos:(Photos *)somePhotos  
+{
+    [photos release];
+    photos = [somePhotos retain];
+    [self.view setNeedsDisplay];
 }
 
 #pragma mark - View lifecycle
@@ -168,7 +178,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id photo = [photos photoAtIndex: indexPath.row];
-    [photos savePhotoAsViewed:photo];
+
+    if (self.savePhotoWhenSelected) [Photos savePhotoAsViewed:photo];
     
     PhotoViewController *photoController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
     photoController.photo = photo;
@@ -177,6 +188,34 @@
     [self.navigationController pushViewController:photoController animated:YES];
     [photoController release];
     
+}
+
+@end
+
+@implementation RecentPhotosViewController
+- (void) setup
+{
+    UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMostRecent tag:0];
+    tabItem.title = @"Most Recent";
+    
+    self.tabBarItem = tabItem;
+    self.savePhotoWhenSelected = NO;
+    [tabItem release];
+}
+
+- (id) initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.photos = [Photos photosRecentlyViewed];
+    [super viewWillAppear:animated];
 }
 
 @end

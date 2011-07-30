@@ -8,7 +8,7 @@
 
 #import "PlacesAppDelegate.h"
 #import "TopPlacesViewController.h"
-#import "RecentPhotosViewController.h"
+#import "PhotosTableViewController.h"
 
 @implementation PlacesAppDelegate
 
