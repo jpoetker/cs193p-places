@@ -90,11 +90,6 @@
     [super viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
 #pragma mark - Table view data source
 
@@ -178,6 +173,11 @@
     photosController.title = [TopPlaces cityFromPlace:[topPlaces placeAtIndex:indexPath.row]];
     [self.navigationController pushViewController:photosController animated:YES];
     [photosController release];    
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
 }
 
 -(void) dealloc

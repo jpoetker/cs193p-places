@@ -48,6 +48,7 @@
     [self.view setNeedsDisplay];
 }
 
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -91,7 +92,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 #pragma mark - Table view data source
