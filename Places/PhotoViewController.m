@@ -39,13 +39,60 @@
     photo = [aPhoto retain];
     
     UIImage *image = [Photos largeImageForPhoto:photo];
-    self.imageView = [[[UIImageView alloc] initWithImage: image] autorelease];
+    
+    UIImageView *uiiv = [[UIImageView alloc] initWithImage: image];
+    self.imageView = uiiv;
+    [uiiv release];
+    
     [self.scrollView addSubview: self.imageView];
     
-    self.scrollView.contentSize = image.size;
-    
+    self.scrollView.contentSize = imageView.bounds.size;
     [self.view setNeedsDisplay];
 }
+
+- (CGRect) calculateZoomRectForImageWithBounds: (CGRect) imageBounds forViewBounds: (CGRect) viewBounds
+{
+    CGRect zoomRect;
+    
+    CGFloat viewAspect = viewBounds.size.width / viewBounds.size.height;
+    CGFloat imageAspect = imageBounds.size.width / imageBounds.size.height;
+    
+    if (viewAspect > imageAspect) {
+        // adjust according to the image width
+        CGFloat height = imageBounds.size.width / viewAspect;
+        CGFloat y = imageBounds.size.height / 2 - height / 2;
+        zoomRect = CGRectMake(0, y, imageBounds.size.width, height);
+        [self.scrollView flashScrollIndicators];
+    } else if (viewAspect < imageAspect) {
+        // adjust according to image height
+        CGFloat width = imageBounds.size.height * viewAspect;
+        CGFloat x = imageBounds.size.width / 2 - width / 2;
+        zoomRect = CGRectMake(x, 0, width, imageBounds.size.height);
+        [self.scrollView flashScrollIndicators];
+    } else {
+        // how lucky.
+        zoomRect = imageBounds;
+    }
+    return zoomRect;
+}
+
+- (float)calculateMinimumScaleForImageWithBounds: (CGRect) imageBounds forViewBounds: (CGRect) viewBounds
+{
+    float scaleWide = viewBounds.size.width / imageBounds.size.width;
+    float scaleHeight = viewBounds.size.height / imageBounds.size.height;
+    
+    return (scaleWide <= scaleHeight) ? scaleWide : scaleHeight;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    CGRect zoomRect = [self calculateZoomRectForImageWithBounds: self.imageView.bounds forViewBounds: self.scrollView.bounds];
+    
+    [self.scrollView zoomToRect:zoomRect animated:NO];    
+   
+    self.scrollView.minimumZoomScale = [self calculateMinimumScaleForImageWithBounds: self.imageView.bounds forViewBounds: self.scrollView.bounds];
+}
+
 
 #pragma mark - View lifecycle
 
